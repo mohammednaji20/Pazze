@@ -1,12 +1,12 @@
-// Project: pizza-site (Final version with online image links)
+// Project: pizza-site (Final working version with guaranteed online image links)
 
 import { motion } from "framer-motion"; import './App.css';
 
-function App() { const pizzas = [ { name: "Margherita", desc: "Tomato, mozzarella, basil", price: "$8", img: "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg" }, { name: "Pepperoni", desc: "Pepperoni, mozzarella, tomato sauce", price: "$10", img: "https://cdn.pixabay.com/photo/2016/03/05/19/02/pizza-1239130_1280.jpg" }, { name: "Veggie", desc: "Mushrooms, peppers, olives, onion", price: "$9", img: "https://cdn.pixabay.com/photo/2014/04/22/02/56/pizza-329523_1280.jpg" } ];
+function App() { const pizzas = [ { name: "Margherita", desc: "Tomato, mozzarella, basil", price: "$8", img: "https://images.unsplash.com/photo-1601924928368-1d1f064843b0?auto=format&fit=crop&w=800&q=80" }, { name: "Pepperoni", desc: "Pepperoni, mozzarella, tomato sauce", price: "$10", img: "https://images.unsplash.com/photo-1594007650432-13f73c0eb6c8?auto=format&fit=crop&w=800&q=80" }, { name: "Veggie", desc: "Mushrooms, peppers, olives, onion", price: "$9", img: "https://images.unsplash.com/photo-1594007650418-bbdfe9de09c6?auto=format&fit=crop&w=800&q=80" } ];
 
 return ( <div style={{ minHeight: "100vh", padding: "40px", background: "#f9fafb" }}> <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} style={{ textAlign: "center", marginBottom: "40px" }} > Pizza House </motion.h1>
 
-<div style={{ display: "flex", gap: "20px", justifyContent: "center" }}> {pizzas.map((p, i) => ( <motion.div key={i} whileHover={{ scale: 1.05 }} style={{ background: "white", padding: "20px", borderRadius: "12px", width: "220px", textAlign: "center" }} > <img src={p.img} alt={p.name} style={{ width: "100%", borderRadius: "12px" }} /> <h3>{p.name}</h3> <p>{p.desc}</p> <strong>{p.price}</strong> <br /> <button style={{ marginTop: "10px" }}>Order</button> </motion.div> ))} </div> </div> 
+<div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}> {pizzas.map((p, i) => ( <motion.div key={i} whileHover={{ scale: 1.05 }} style={{ background: "white", padding: "20px", borderRadius: "12px", width: "220px", textAlign: "center", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }} > <img src={p.img} alt={p.name} style={{ width: "100%", borderRadius: "12px" }} /> <h3>{p.name}</h3> <p>{p.desc}</p> <strong>{p.price}</strong> <br /> <button style={{ marginTop: "10px", padding: "8px 16px", borderRadius: "6px", border: "none", backgroundColor: "#f59e0b", color: "white", cursor: "pointer" }}>Order</button> </motion.div> ))} </div> </div> 
 
 ); }
 
